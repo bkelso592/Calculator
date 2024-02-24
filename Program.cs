@@ -1,48 +1,40 @@
-﻿using System;
+#include <iostream>
+using namespace std;
 
-namespace ConsoleApp1
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            int num1, num2;
-            char operation;
+int main() {
+    int num1, num2;
+    char operation;
 
-            Console.Write("Enter the first number: ");
-            num1 = Convert.ToInt32(Console.ReadLine());
+    cout << "Enter the first number: ";
+    cin >> num1;
 
-            Console.Write("Enter the second number: ");
-            num2 = Convert.ToInt32(Console.ReadLine());
+    cout << "Enter the second number: ";
+    cin >> num2;
 
-            Console.Write("Enter the operator (+, -, /, *): ");
-            operation = Convert.ToChar(Console.ReadLine());
+    cout << "Enter the operator (+, -, /, *): ";
+    cin >> operation;
 
-            switch (operation)
-            {
-                case '+':
-                    Console.WriteLine($"{num1} + {num2} = {num1 + num2}");
-                    break;
-                case '-':
-                    Console.WriteLine($"{num1} - {num2} = {num1 - num2}");
-                    break;
-                case '*':
-                    Console.WriteLine($"{num1} * {num2} = {num1 * num2}");
-                    break;
-                case '/':
-                    if (num2 != 0)
-                    {
-                        Console.WriteLine($"{num1} / {num2} = {(double)num1 / num2}");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Error: Division by zero is not allowed.");
-                    }
-                    break;
-                default:
-                    Console.WriteLine("Error: Unsupported operator.");
-                    break;
+    switch (operation) {
+        case '+':
+            cout << num1 << " + " << num2 << " = " << num1 + num2 << endl;
+            break;
+        case '-':
+            cout << num1 << " - " << num2 << " = " << num1 - num2 << endl;
+            break;
+        case '*':
+            cout << num1 << " * " << num2 << " = " << num1 * num2 << endl;
+            break;
+        case '/':
+            if (num2 != 0) {
+                cout << num1 << " / " << num2 << " = " << static_cast<double>(num1) / num2 << endl;
+            } else {
+                cout << "Error: Division by zero is not allowed." << endl;
             }
-        }
+            break;
+        default:
+            cout << "Error: Unsupported operator." << endl;
+            break;
     }
+
+    return 0;
 }
